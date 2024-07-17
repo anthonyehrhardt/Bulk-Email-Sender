@@ -1,16 +1,16 @@
 import pandas as pd
 import smtplib
 
-# Define your email and password (or app-specific password if 2FA is enabled)
-SenderAddress = "aehrhardt@gmail.com"
-password = "your_app_specific_password"
+# Define your Outlook email and password
+SenderAddress = "anthony.ehrhardt@team-arti.com"
+password = "your_outlook_password"
 
 # Read the emails from the Excel file
 e = pd.read_excel("Email.xlsx")
 emails = e['Emails'].values
 
 # Create an SMTP session
-server = smtplib.SMTP("smtp.gmail.com", 587)
+server = smtplib.SMTP("smtp.office365.com", 587)
 server.starttls()
 
 try:
